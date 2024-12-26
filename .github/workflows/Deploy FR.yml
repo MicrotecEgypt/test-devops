@@ -1,0 +1,50 @@
+name: Build and Deploy Frontend
+
+on:
+  workflow_dispatch
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: Sprint18
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: |
+          npm config set legacy-peer-deps true
+          npm install --force --verbose
+          npm install @zxing/browser@latest @zxing/ngx-scanner@latest
+
+
+      - name: Build all projects
+        run: |
+          ng build apps-inventory
+          ng build bussiness-owners
+          ng build adminportal
+          ng build apps-accounting
+          ng build apps-finance
+          ng build apps-hr
+          ng build apps-purchase
+          ng build apps-sales
+          ng build erp-home
+
+
+      - name: Copy output to D:\front
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path "D:\front\dist" -Force
+          xcopy /s /y dist\* D:\front\dist\
+          Write-Host "Deployment successful!"
