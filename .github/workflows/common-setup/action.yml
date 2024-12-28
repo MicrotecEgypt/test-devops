@@ -31,9 +31,9 @@ on:
 #       example-secret:
 #         required: true
 
-jobs:
-  setup:
-    runs-on: selef-hosted
+runs:
+  using: "composite"
+  steps:
     steps:
       - name: Example step
-        run: echo "Hello Yasser Sallam"
+        run: echo Hello Yasser Sallam
