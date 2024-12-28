@@ -42,13 +42,16 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Example step
+      run: echo Hello Yasser Sallam: ${{ inputs.node-version }}
+
     - name: Checkout Repository
       uses: actions/checkout@v3
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '${{ inputs.node-version }}'
+        node-version: '18'
 
     - name: Clean npm cache
       run: npm cache clean --force
@@ -58,3 +61,5 @@ runs:
         npm config set legacy-peer-deps true
         npm install --force --verbose
         npm install @zxing/browser@latest @zxing/ngx-scanner@latest
+
+
