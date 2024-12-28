@@ -1,4 +1,4 @@
-name: Build and Deploy Frontend App
+name: build-front
 on:
   workflow_dispatch:
     inputs:
