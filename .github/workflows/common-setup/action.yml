@@ -43,7 +43,7 @@ runs:
   using: 'composite'
   steps:
     - name: Example step
-      run: echo Hello Yasser Sallam: ${{ inputs.node-version }}
+      run: echo "Hello Yasser Sallam"
 
     - name: Checkout Repository
       uses: actions/checkout@v3
