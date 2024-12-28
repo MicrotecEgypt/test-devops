@@ -36,4 +36,4 @@ jobs:
     runs-on: selef-hosted
     steps:
       - name: Example step
-        run: echo "Hello, ${{ var.example }}"
+        run: echo "Hello, ${{ vars.example }}"
