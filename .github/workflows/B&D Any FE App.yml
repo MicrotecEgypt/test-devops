@@ -44,6 +44,8 @@ jobs:
       #     npm install --force --verbose
       #     npm install @zxing/browser@latest @zxing/ngx-scanner@latest
 
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: call-workflow-1-in-local-repo
         uses: ./.github/workflows/common-setup.yml
