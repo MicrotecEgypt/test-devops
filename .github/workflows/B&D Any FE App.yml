@@ -30,34 +30,37 @@ jobs:
       - name: Checkout submodules
         run: git submodule update --init --recursive
 ##########################
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '18'
-
-      # - name: Clean npm cache
-      #   run: npm cache clean --force
-
-      # - name: Install dependencies
-      #   run: |
-      #     npm config set legacy-peer-deps true
-      #     npm install --force --verbose
-      #     npm install @zxing/browser@latest @zxing/ngx-scanner@latest
-
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          ref: main
-          fetch-depth: 0
+          node-version: '18'
 
-      - name: call-common workflow
-        uses: ./.github/workflows/common-setup.yml
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Install dependencies
+        run: |
+          npm config set legacy-peer-deps true
+          npm install --force --verbose
+          npm install @zxing/browser@latest @zxing/ngx-scanner@latest
+##########################
+
+      # - name: Checkout repository
+      #   uses: actions/checkout@v3
+      #   with:
+      #     ref: main
+      #     fetch-depth: 0
+
+      # - name: call-common workflow
+      #   uses: ./.github/workflows/common-setup.yml
+##########################
 
       # - name: Common Build Steps
       #   uses: ./.github/actions/common-setup
       #   with:
       #     node-version: '18'
       #     ref: main
+##########################
 
       - name: Build App
         run: |
