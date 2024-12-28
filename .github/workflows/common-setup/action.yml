@@ -42,9 +42,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Example step
-      shell: pwsh
-      run: echo Hello Yasser Sallam
+    # - name: Example step
+    #   shell: pwsh
+    #   run: echo Hello Yasser Sallam
 
     - name: Checkout Repository
       uses: actions/checkout@v3
