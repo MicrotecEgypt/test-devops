@@ -43,11 +43,16 @@ jobs:
       #     npm config set legacy-peer-deps true
       #     npm install --force --verbose
       #     npm install @zxing/browser@latest @zxing/ngx-scanner@latest
-      - name: Common Build Steps
-        uses: ./.github/actions/common-setup
-        with:
-          node-version: '18'
-          ref: main
+
+
+      - name: call-workflow-1-in-local-repo
+        uses: ./.github/workflows/common-setup.yml
+
+      # - name: Common Build Steps
+      #   uses: ./.github/actions/common-setup
+      #   with:
+      #     node-version: '18'
+      #     ref: main
 
       - name: Build App
         run: |

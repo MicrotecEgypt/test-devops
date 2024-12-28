@@ -1,0 +1,24 @@
+# name: common-setup
+# description: test
+
+# runs:
+#   on:
+#     workflow_call:
+
+# steps:
+#   - name: Checkout Repository
+#     uses: actions/checkout@v3
+
+#   - name: Setup Node.js
+#     uses: actions/setup-node@v3
+#     with:
+#       node-version: '18'
+
+#   - name: Clean npm cache
+#     run: npm cache clean --force
+
+#   - name: Install dependencies
+#     run: |
+#       npm config set legacy-peer-deps true
+#       npm install --force --verbose
+#       npm install @zxing/browser@latest @zxing/ngx-scanner@latest
