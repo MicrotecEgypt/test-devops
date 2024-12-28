@@ -29,13 +29,6 @@ jobs:
           npm install @zxing/browser@latest @zxing/ngx-scanner@latest
 # on:
 #   workflow_call:
-#     inputs:
-#       example-input:
-#         required: true
-#         type: string
-#     secrets:
-#       example-secret:
-#         required: true
 
 # jobs:
 #   setup:
