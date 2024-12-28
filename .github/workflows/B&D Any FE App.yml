@@ -3,10 +3,19 @@ name: Build and Deploy Any Frontend
 on:
   workflow_dispatch:
     inputs:
-      app-name:
-        description: 'Build and Deploy Any Frontend Apps'
-        required: true
-
+      name:
+        type: choice
+        description: Select Frontend Apps
+        options:
+        - apps-hr
+        - apps-finance
+        - apps-sales
+        - adminportal
+        - apps-accounting
+        - apps-inventory
+        - apps-purchase
+        - business-owners
+        - erp-home
 jobs:
   build-and-deploy:
     runs-on: self-hosted
