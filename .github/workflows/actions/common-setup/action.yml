@@ -1,4 +1,4 @@
-name: Common Setup
+name: common-setup
 
 on:
   workflow_dispatch:
