@@ -21,6 +21,7 @@ on:
   workflow_call:
     inputs:
       example:
+        type: string
         required: true
 #     inputs:
 #       example-input:
