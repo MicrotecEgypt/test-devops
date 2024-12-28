@@ -22,7 +22,6 @@ on:
     inputs:
       example:
         required: true
-        type: string
 #     inputs:
 #       example-input:
 #         required: true
