@@ -1,9 +1,3 @@
-name: common-setup
-description: test
-
-runs:
-  on:
-    workflow_call:
 
 steps:
   - name: Checkout Repository
