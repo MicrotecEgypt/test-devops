@@ -19,6 +19,7 @@ runs:
         fetch-depth: 0
 
     - name: Checkout submodules
+      shell: pwsh
       run: git submodule update --init --recursive
 
     - name: Checkout repository
@@ -30,6 +31,7 @@ runs:
         node-version: 18
 
     - name: Build App
+      shell: pwsh
       run: |
         ng build ${{ inputs.app-name }}
 
