@@ -30,21 +30,28 @@ jobs:
       - name: Checkout submodules
         run: git submodule update --init --recursive
 ##########################
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '18'
 
-      - name: Clean npm cache
-        run: npm cache clean --force
+      # - name: Clean npm cache
+      #   run: npm cache clean --force
 
-      - name: Install dependencies
-        run: |
-          npm config set legacy-peer-deps true
-          npm install --force --verbose
-          npm install @zxing/browser@latest @zxing/ngx-scanner@latest
+      # - name: Install dependencies
+      #   run: |
+      #     npm config set legacy-peer-deps true
+      #     npm install --force --verbose
+      #     npm install @zxing/browser@latest @zxing/ngx-scanner@latest
 ##########################
 
+
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run custom action
+        uses: ./.github/workflows/common-setup.yml
       # - name: Checkout repository
       #   uses: actions/checkout@v3
       #   with:
