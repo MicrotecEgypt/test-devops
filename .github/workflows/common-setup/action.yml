@@ -1,38 +1,4 @@
-
-# steps:
-#   - name: Checkout Repository
-#     uses: actions/checkout@v3
-
-#   - name: Setup Node.js
-#     uses: actions/setup-node@v3
-#     with:
-#       node-version: '18'
-
-#   - name: Clean npm cache
-#     run: npm cache clean --force
-
-#   - name: Install dependencies
-#     run: |
-#       npm config set legacy-peer-deps true
-#       npm install --force --verbose
-#       npm install @zxing/browser@latest @zxing/ngx-scanner@latest
-
-# on:
-#   workflow_call:
-#     inputs:
-#       example:
-#         type: string
-#         required: true
-
-
-# runs:
-#   using: "composite"
-#   steps:
-#     steps:
-#       - name: Example step
-#         run: echo Hello Yasser Sallam
-
-name: Initialise the app environment
+name: Setup Common
 
 inputs:
   node-version:
@@ -64,8 +30,3 @@ runs:
         npm config set legacy-peer-deps true
         npm install --force --verbose
         npm install @zxing/browser@latest @zxing/ngx-scanner@latest
-
-
-
-
-
