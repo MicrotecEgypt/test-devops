@@ -17,23 +17,36 @@
 #       npm install --force --verbose
 #       npm install @zxing/browser@latest @zxing/ngx-scanner@latest
 
-on:
-  workflow_call:
-    inputs:
-      example:
-        type: string
-        required: true
+# on:
+#   workflow_call:
 #     inputs:
-#       example-input:
-#         required: true
+#       example:
 #         type: string
-#     secrets:
-#       example-secret:
 #         required: true
 
+
+# runs:
+#   using: "composite"
+#   steps:
+#     steps:
+#       - name: Example step
+#         run: echo Hello Yasser Sallam
+
+name: Initialise the app environment
+
+inputs:
+  node-version:
+    required: true
+    type: string
+
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
-    steps:
-      - name: Example step
-        run: echo Hello Yasser Sallam
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '${{ inputs.example }}'
+
+    - name: Install dependencies
+      shell: bash # ! the dev has to specify this line at every `run` step in a composite action
+      run: npm install
