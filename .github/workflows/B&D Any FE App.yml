@@ -50,7 +50,7 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: call-workflow-1-in-local-repo
+      - name: call-common workflow
         uses: ./.github/workflows/common-setup.yml
 
       # - name: Common Build Steps
