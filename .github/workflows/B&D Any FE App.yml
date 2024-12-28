@@ -1,11 +1,10 @@
-name: Build and Deploy Any Frontend
-
+name: Build and Deploy Frontend App
 on:
   workflow_dispatch:
     inputs:
-      name:
+      app-name:
         type: choice
-        description: Select Frontend Apps
+        description: Select Frontend App
         options:
         - apps-hr
         - apps-finance
