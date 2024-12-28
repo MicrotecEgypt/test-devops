@@ -19,6 +19,10 @@
 
 on:
   workflow_call:
+    inputs:
+      example-input:
+        required: true
+        type: string
 #     inputs:
 #       example-input:
 #         required: true
@@ -32,4 +36,4 @@ jobs:
     runs-on: selef-hosted
     steps:
       - name: Example step
-        run: echo "Hello, Yasser Sallam"
+      run: echo "Hello, ${{ inputs.example-input }}"
