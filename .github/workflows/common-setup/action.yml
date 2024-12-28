@@ -35,4 +35,4 @@ jobs:
     runs-on: selef-hosted
     steps:
       - name: Example step
-        run: echo "Hello, ${{ github.event.inputs.example }}"
+        run: echo "Hello, ${{ example }}"
