@@ -22,7 +22,7 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - uses: ./workflows/build-front-app.yml
+      - uses: ./workflows/build-front-app
         with:
           app-name: apps-hr
           node-version: 18
