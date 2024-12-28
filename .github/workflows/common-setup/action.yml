@@ -36,4 +36,4 @@ jobs:
     runs-on: selef-hosted
     steps:
       - name: Example step
-        run: echo "Hello, ${{ inputs.example }}"
+        run: echo "Hello Yasser Sallam"
