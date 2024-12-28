@@ -53,7 +53,7 @@ jobs:
       - name: Run custom action
         uses: ./.github/workflows/common-setup
         with:
-          example: main
+          node-version: 18
       #     fetch-depth: 0
       # - name: Checkout repository
       #   uses: actions/checkout@v3
