@@ -42,9 +42,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    # - name: Example step
-    #   shell: pwsh
-    #   run: echo Hello Yasser Sallam
+    - name: Example step
+      shell: pwsh
+      run: echo Hello Yasser Sallam
 
     - name: Checkout Repository
       uses: actions/checkout@v3
@@ -55,12 +55,17 @@ runs:
         node-version: '18'
 
     - name: Clean npm cache
+      shell: pwsh
       run: npm cache clean --force
 
     - name: Install dependencies
+      shell: pwsh
       run: |
         npm config set legacy-peer-deps true
         npm install --force --verbose
         npm install @zxing/browser@latest @zxing/ngx-scanner@latest
+
+
+
 
 
