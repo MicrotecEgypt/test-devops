@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/actions/common-setup/
         with:
           node-version: '18'
-          ref: Sprint18
+          ref: main
 
       - name: Build App
         run: |
