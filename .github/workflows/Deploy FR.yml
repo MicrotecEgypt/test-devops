@@ -13,17 +13,20 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: ttttt
       - uses: ./.github/workflows/build-front-app
         with:
           app-name: apps-hr
           node-version: 18
+
+      - name: ttttt s
 
       - uses: ./.github/workflows/build-front-app
         with:
           app-name: apps-finance
           node-version: 18
 
-
+      - name: ttttt s
       - uses: ./.github/workflows/build-front-app
         with:
           app-name: apps-sales
